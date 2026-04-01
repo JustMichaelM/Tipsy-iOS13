@@ -14,10 +14,15 @@ class ResultViewController: UIViewController {
     
     @IBOutlet weak var settingLabel: UILabel!
     
+    var totalPerPerson: Double!
+    var tipPercentage: Double!
+    var people: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        totalLabel.text = String(format: "%.2f", totalPerPerson)
+        settingLabel.text = "Split between \(String(people)) people, with \(String(format:"%.0f",tipPercentage*100))% tip."
+        
         // Do any additional setup after loading the view.
     }
     
@@ -32,6 +37,7 @@ class ResultViewController: UIViewController {
     }
     */
     @IBAction func recalculatePressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
     
 }
